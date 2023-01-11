@@ -1,0 +1,22 @@
+### Service Document
+GET http://localhost:4004/sap/opu/odata/sap/AdminEndpoint/Authors?$expand=books&Select( name )
+
+### Create Author
+POST http://localhost:4004/sap/opu/odata/sap/AdminEndpoint/Authors HTTP/1.1
+content-Type: application/json
+
+{
+    "ID": 105, 
+    "name": "J.K. Rowling"
+   
+} 
+### Update Author
+PATCH http://localhost:4004/sap/opu/odata/sap/AdminEndpoint/Authors/105 HTTP/1.1
+content-Type: application/json
+
+{
+    "name": "Rowling"
+} 
+
+### Delete Author
+DELETE http://localhost:4004/sap/opu/odata/sap/AdminEndpoint/Authors/105 HTTP/1.1

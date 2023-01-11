@@ -1,0 +1,18 @@
+### Browse Books
+GET http://localhost:4004/browse/Books
+
+### Browse Books 
+GET http://localhost:4004/sap/opu/odata/sap/AdminEndpoint/Books
+
+
+### Browse Orders
+GET http://localhost:4004/sap/opu/odata/sap/AdminEndpoint/Orders
+
+### Try to insert into Books
+POST http://localhost:4004/browse/Books
+Content-Type: application/json
+
+{ 
+    "title": "Anna Karenina",
+    "stock": 10
+}

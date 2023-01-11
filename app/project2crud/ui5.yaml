@@ -1,0 +1,4 @@
+specVersion: "2.5"
+metadata:
+  name: org.namespace.crud.orders.project2crud
+type: application

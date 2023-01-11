@@ -1,0 +1,41 @@
+GET http://localhost:4004/sap/opu/odata/sap/AdminEndpoint/Books?$filter=stock eq 2 
+
+###
+
+POST  http://localhost:4004/sap/opu/odata/sap/AdminEndpoint/Books
+Content-Type: application/json
+
+{
+"name":"test","language":"EN","ID":300,"title":"Post","descr":"harrypotter","author_ID":50,"stock":50,"price":200,"currency_code":"eur"
+}
+
+###
+
+DELETE   http://localhost:4004/sap/opu/odata/sap/AdminEndpoint/Books/300
+Content-Type: application/json
+
+
+
+###
+
+PUT   http://localhost:4004/sap/opu/odata/sap/AdminEndpoint/Books/300
+Content-Type: application/json
+
+{
+"name":"tester","language":"DE"
+}
+### Create Book
+POST http://localhost:4004/sap/opu/odata/sap/AdminEndpoint/Books
+Content-Type: application/json
+
+{
+"name":"Harry Potter 7",
+"language":"English",
+"ID":350,
+"title":"Harry Potter Series Last Part",
+"descr":"xxx",
+"author_ID":200,
+"stock":1,
+"price":100,
+"currency_code":"AED"
+}

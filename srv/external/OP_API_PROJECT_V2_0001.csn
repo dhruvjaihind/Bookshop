@@ -1,0 +1,1295 @@
+{
+  "meta": {
+    "creator": "cds-dk 6.4.0"
+  },
+  "$version": "2.0",
+  "definitions": {
+    "OP_API_PROJECT_V2_0001": {
+      "kind": "service",
+      "@cds.external": true,
+      "@m.IsDefaultEntityContainer": "true",
+      "@sap.message.scope.supported": "true",
+      "@sap.supported.formats": "atom json xlsx"
+    },
+    "OP_API_PROJECT_V2_0001.Project": {
+      "kind": "entity",
+      "@cds.external": true,
+      "@cds.persistence.skip": true,
+      "@sap.creatable": "false",
+      "@sap.updatable": "false",
+      "@sap.deletable": "false",
+      "@sap.content.version": "1",
+      "@sap.label": "Project Details",
+      "elements": {
+        "ProjectInternalID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 8,
+          "@sap.display.format": "NonNegative",
+          "@sap.label": "Project def.",
+          "@sap.quickinfo": "Project (internal)",
+          "notNull": true
+        },
+        "ProjectExternalID": {
+          "type": "cds.String",
+          "length": 24,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Project Definition",
+          "@sap.quickinfo": "Project Number (External) Edited"
+        },
+        "ProjectDescription": {
+          "type": "cds.String",
+          "length": 40,
+          "@sap.label": "Project Name"
+        },
+        "ProjectLangBsdDescription": {
+          "type": "cds.String",
+          "length": 40,
+          "@sap.label": "ShortTxt",
+          "@sap.quickinfo": "Language-Dependent Short Text"
+        },
+        "ProjectProfileCode": {
+          "type": "cds.String",
+          "length": 7,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Project Profile"
+        },
+        "CompanyCode": {
+          "type": "cds.String",
+          "length": 4,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Company Code"
+        },
+        "ControllingArea": {
+          "type": "cds.String",
+          "length": 4,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Controlling Area"
+        },
+        "FunctionalArea": {
+          "type": "cds.String",
+          "length": 16,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Functional Area"
+        },
+        "ProfitCenter": {
+          "type": "cds.String",
+          "length": 10,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Profit Center"
+        },
+        "PlannedStartDate": {
+          "type": "cds.Date",
+          "@sap.display.format": "Date",
+          "@sap.label": "Start date",
+          "@sap.quickinfo": "Project planned start date"
+        },
+        "PlannedEndDate": {
+          "type": "cds.Date",
+          "@sap.display.format": "Date",
+          "@sap.label": "Finish date",
+          "@sap.quickinfo": "Project planned finish date"
+        },
+        "WorkCenterLocation": {
+          "type": "cds.String",
+          "length": 10,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Location"
+        },
+        "TaxJurisdiction": {
+          "type": "cds.String",
+          "length": 15,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Tax Jurisdiction"
+        },
+        "ResponsiblePerson": {
+          "type": "cds.String",
+          "length": 8,
+          "@sap.display.format": "NonNegative",
+          "@sap.label": "No. of Person Resp.",
+          "@sap.quickinfo": "Number of the Responsible Person (Project Manager)"
+        },
+        "ResponsiblePersonName": {
+          "type": "cds.String",
+          "length": 25,
+          "@sap.label": "Name of Person Resp.",
+          "@sap.quickinfo": "Name of responsible person (Project manager)"
+        },
+        "ApplicantCode": {
+          "type": "cds.String",
+          "length": 8,
+          "@sap.display.format": "NonNegative",
+          "@sap.label": "Applicant no.",
+          "@sap.quickinfo": "Applicant number"
+        },
+        "ApplicantName": {
+          "type": "cds.String",
+          "length": 25,
+          "@sap.label": "Applicant"
+        },
+        "CreatedByUser": {
+          "type": "cds.String",
+          "length": 12,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Created By",
+          "@sap.quickinfo": "Name of Person Responsible for Creating the Object"
+        },
+        "CreationDate": {
+          "type": "cds.Date",
+          "@sap.display.format": "Date",
+          "@sap.label": "Created On",
+          "@sap.quickinfo": "Record Created On"
+        },
+        "LastChangedByUser": {
+          "type": "cds.String",
+          "length": 12,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Changed By",
+          "@sap.quickinfo": "Name of Person Who Changed Object"
+        },
+        "LastChangeDate": {
+          "type": "cds.Date",
+          "@sap.display.format": "Date",
+          "@sap.label": "Last Changed On",
+          "@sap.quickinfo": "Changed On"
+        },
+        "BasicDatesLastScheduledDate": {
+          "type": "cds.Date",
+          "@sap.display.format": "Date",
+          "@sap.label": "Last basic sched.",
+          "@sap.quickinfo": "Date of last scheduling of the overall network (basic dates)"
+        },
+        "FcstdDatesLastScheduledDate": {
+          "type": "cds.Date",
+          "@sap.display.format": "Date",
+          "@sap.label": "Last forecast sched.",
+          "@sap.quickinfo": "Date of last scheduling of the overall network (forecast)"
+        },
+        "FactoryCalendar": {
+          "type": "cds.String",
+          "length": 2,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Calendar",
+          "@sap.quickinfo": "Appointments: Calendar"
+        },
+        "SchedulingDurationUnit": {
+          "type": "cds.String",
+          "length": 3,
+          "@sap.label": "Time Unit",
+          "@sap.quickinfo": "Time Unit for Execution Duration",
+          "@sap.semantics": "unit-of-measure"
+        },
+        "ForecastedStartDate": {
+          "type": "cds.Date",
+          "@sap.display.format": "Date",
+          "@sap.label": "Forecast Start Date"
+        },
+        "ForecastedEndDate": {
+          "type": "cds.Date",
+          "@sap.display.format": "Date",
+          "@sap.label": "Forecast Finish Date"
+        },
+        "BusinessArea": {
+          "type": "cds.String",
+          "length": 4,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Business Area"
+        },
+        "Plant": {
+          "type": "cds.String",
+          "length": 4,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Plant"
+        },
+        "Currency": {
+          "type": "cds.String",
+          "length": 5,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Project Currency",
+          "@sap.quickinfo": "WBS currency (project definition)",
+          "@sap.semantics": "currency-code"
+        },
+        "BudgetProfile": {
+          "type": "cds.String",
+          "length": 6,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Budget Profile"
+        },
+        "PlanningProfile": {
+          "type": "cds.String",
+          "length": 6,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Planning Profile"
+        },
+        "InvestmentProfile": {
+          "type": "cds.String",
+          "length": 6,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Investment Profile",
+          "@sap.quickinfo": "Investment Measure Profile"
+        },
+        "ProjInterestCalcProfile": {
+          "type": "cds.String",
+          "length": 7,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Interest Profile",
+          "@sap.quickinfo": "Interest Profile for Project/Order Interest Calculation"
+        },
+        "ResultAnalysisInternalID": {
+          "type": "cds.String",
+          "length": 6,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Results analysis key",
+          "@sap.quickinfo": "Results Analysis Key"
+        },
+        "ControllingObjectClass": {
+          "type": "cds.String",
+          "length": 2,
+          "@sap.label": "Object Class"
+        },
+        "NetworkProfile": {
+          "type": "cds.String",
+          "length": 7,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Network Profile"
+        },
+        "WBSSchedulingProfile": {
+          "type": "cds.String",
+          "length": 12,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "WBS Scheduling Profile",
+          "@sap.quickinfo": "Profile for WBS scheduling"
+        },
+        "PlanningMethForProjBasicDate": {
+          "type": "cds.String",
+          "length": 1,
+          "@sap.display.format": "NonNegative",
+          "@sap.label": "Dates Planning Metho",
+          "@sap.quickinfo": "Planning method for project basic dates"
+        },
+        "PlanningMethForProjFcstdDate": {
+          "type": "cds.String",
+          "length": 1,
+          "@sap.display.format": "NonNegative",
+          "@sap.label": "Forecast Dates Planning Method",
+          "@sap.quickinfo": "Planning method for project forecast dates"
+        },
+        "NetworkAssignmentType": {
+          "type": "cds.String",
+          "length": 1,
+          "@sap.display.format": "NonNegative",
+          "@sap.label": "Network asst",
+          "@sap.quickinfo": "Network assignment"
+        },
+        "WBSIsStatisticalWBSElement": {
+          "type": "cds.Boolean",
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Statistical",
+          "@sap.quickinfo": "Statistical WBS element"
+        },
+        "WBSIsMarkedForIntegratedPlng": {
+          "type": "cds.Boolean",
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Integrated Planning",
+          "@sap.quickinfo": "Indicator for Integrated Planning"
+        },
+        "ProjectHasOwnStock": {
+          "type": "cds.Boolean",
+          "@sap.label": "Project Stock"
+        },
+        "InventorySpecialStockValnType": {
+          "type": "cds.String",
+          "length": 1,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Spec. stk valuation",
+          "@sap.quickinfo": "Valuation of Special Stock"
+        },
+        "WBSIsMarkedForAutomReqmtGrpg": {
+          "type": "cds.Boolean",
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Auto.rqmnts grp.",
+          "@sap.quickinfo": "Indicator: Automatic requirements grouping"
+        },
+        "SalesOrganization": {
+          "type": "cds.String",
+          "length": 4,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Sales Organization"
+        },
+        "DistributionChannel": {
+          "type": "cds.String",
+          "length": 2,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Distribution Channel"
+        },
+        "Language": {
+          "type": "cds.String",
+          "length": 2,
+          "@sap.label": "Language Key"
+        },
+        "WBSElementExternalID": {
+          "type": "cds.String",
+          "length": 24,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Mask short ID",
+          "@sap.quickinfo": "Selection mask for WBS element short IDs"
+        },
+        "Division": {
+          "type": "cds.String",
+          "length": 2,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Division"
+        },
+        "DynItemProcessorPrfl": {
+          "type": "cds.String",
+          "length": 8,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "DIP Profile",
+          "@sap.quickinfo": "Dynamic Item Processor Profile"
+        },
+        "JointVenture": {
+          "type": "cds.String",
+          "length": 6,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Joint venture"
+        },
+        "JointVentureCostRecoveryCode": {
+          "type": "cds.String",
+          "length": 2,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Recovery Indicator"
+        },
+        "JointVentureEquityType": {
+          "type": "cds.String",
+          "length": 3,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Equity type"
+        },
+        "JointVentureObjectType": {
+          "type": "cds.String",
+          "length": 4,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "JV Object Type",
+          "@sap.quickinfo": "Joint Venture Object Type"
+        },
+        "JntIntrstBillgClass": {
+          "type": "cds.String",
+          "length": 3,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "JIB/JIBE Class"
+        },
+        "JntIntrstBillgSubClass": {
+          "type": "cds.String",
+          "length": 5,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "JIB/JIBE Subclass A"
+        },
+        "StatusProfile": {
+          "type": "cds.String",
+          "length": 8,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "PD status profile",
+          "@sap.quickinfo": "Status profile for project definition"
+        },
+        "WBSStatusProfile": {
+          "type": "cds.String",
+          "length": 8,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "WBS status profile",
+          "@sap.quickinfo": "Status profile for WBS element"
+        },
+        "SimulationProfile": {
+          "type": "cds.String",
+          "length": 7,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Simulation profile"
+        },
+        "SchedulingScenario": {
+          "type": "cds.String",
+          "length": 1,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Scheduling scenario"
+        },
+        "DistributionProfile": {
+          "type": "cds.String",
+          "length": 6,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Distribution profile"
+        },
+        "PartnerDeterminationProcedure": {
+          "type": "cds.String",
+          "length": 4,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "PartnerDetermProced.",
+          "@sap.quickinfo": "Partner Determination Procedure"
+        },
+        "FreeDefinedTableFieldSemantic": {
+          "type": "cds.String",
+          "length": 7,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Field key",
+          "@sap.quickinfo": "Key word ID for user-defined fields"
+        },
+        "FreeDefinedAttribute01": {
+          "type": "cds.String",
+          "length": 20,
+          "@sap.label": "Ufield 1 WBS element",
+          "@sap.quickinfo": "1st user field for 20 characters - WBS element-"
+        },
+        "FreeDefinedAttribute02": {
+          "type": "cds.String",
+          "length": 20,
+          "@sap.label": "Ufield 2 WBS element",
+          "@sap.quickinfo": "2nd user field 20 digits - WBS element"
+        },
+        "FreeDefinedAttribute03": {
+          "type": "cds.String",
+          "length": 10,
+          "@sap.label": "Ufield 3 WBS element",
+          "@sap.quickinfo": "3rd user-defined field 10 digits -WBS element"
+        },
+        "FreeDefinedAttribute04": {
+          "type": "cds.String",
+          "length": 10,
+          "@sap.label": "Ufield 4 WBS element",
+          "@sap.quickinfo": "4th user-defined field 10 digits -WBS element"
+        },
+        "FreeDefinedQuantity1": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3,
+          "@sap.unit": "FreeDefinedQuantity1Unit",
+          "@sap.label": "Ufield Quanty 1 WBS",
+          "@sap.quickinfo": "1st user-defined field for quantity(length 10,3) WBS element"
+        },
+        "FreeDefinedQuantity1Unit": {
+          "type": "cds.String",
+          "length": 3,
+          "@sap.label": "UF unit 1 WBS",
+          "@sap.quickinfo": "1st user defined field for quantity field unit - WBS element",
+          "@sap.semantics": "unit-of-measure"
+        },
+        "FreeDefinedQuantity2": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3,
+          "@sap.unit": "FreeDefinedQuantity2Unit",
+          "@sap.label": "UF Qty 2 WBS",
+          "@sap.quickinfo": "2nd use field for quantity (length 10,3) WBS element"
+        },
+        "FreeDefinedQuantity2Unit": {
+          "type": "cds.String",
+          "length": 3,
+          "@sap.label": "UF unit 2 WBS",
+          "@sap.quickinfo": "2nd user defined field for quantity field unit - WBS element",
+          "@sap.semantics": "unit-of-measure"
+        },
+        "FreeDefinedAmount1": {
+          "type": "cds.Decimal",
+          "precision": 10,
+          "scale": 3,
+          "@sap.unit": "FreeDefinedAmount1Currency",
+          "@sap.variable.scale": "true",
+          "@sap.label": "User field value 1 for Project"
+        },
+        "FreeDefinedAmount1Currency": {
+          "type": "cds.String",
+          "length": 5,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Ufield unit 1 WBS",
+          "@sap.quickinfo": "1st user defined field for value field unit - WBS element",
+          "@sap.semantics": "currency-code"
+        },
+        "FreeDefinedAmount2": {
+          "type": "cds.Decimal",
+          "precision": 10,
+          "scale": 3,
+          "@sap.unit": "FreeDefinedAmount2Currency",
+          "@sap.variable.scale": "true",
+          "@sap.label": "User field value 2 for Project"
+        },
+        "FreeDefinedAmount2Currency": {
+          "type": "cds.String",
+          "length": 5,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Ufield unit 2 WBS",
+          "@sap.quickinfo": "2nd user defined field for value field unit - WBS element",
+          "@sap.semantics": "currency-code"
+        },
+        "FreeDefinedDate1": {
+          "type": "cds.Date",
+          "@sap.display.format": "Date",
+          "@sap.label": "Ufield date 1 WBS",
+          "@sap.quickinfo": "1st user field for date -WBS element"
+        },
+        "FreeDefinedDate2": {
+          "type": "cds.Date",
+          "@sap.display.format": "Date",
+          "@sap.label": "Ufield date 2 WBS",
+          "@sap.quickinfo": "2nd user field for date -WBS element"
+        },
+        "FreeDefinedIndicator1": {
+          "type": "cds.Boolean",
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Ufield Ind. 1 WBS",
+          "@sap.quickinfo": "1st user field for 'Ind. for evaluations' WBS elem."
+        },
+        "FreeDefinedIndicator2": {
+          "type": "cds.Boolean",
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Ufield Ind. 2 WBS",
+          "@sap.quickinfo": "2nd user field for 'Indicator for eval.s' WBS elemnt"
+        },
+        "to_WBSElement": {
+          "@cds.ambiguous": "missing on condition?",
+          "type": "cds.Composition",
+          "target": "OP_API_PROJECT_V2_0001.WBSElement",
+          "cardinality": {
+            "max": "*"
+          },
+          "on": [
+            {
+              "ref": [
+                "to_WBSElement",
+                "ProjectInternalID"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "ProjectInternalID"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "OP_API_PROJECT_V2_0001.WBSElement": {
+      "kind": "entity",
+      "@cds.external": true,
+      "@cds.persistence.skip": true,
+      "@sap.creatable": "false",
+      "@sap.updatable": "false",
+      "@sap.deletable": "false",
+      "@sap.content.version": "1",
+      "@sap.label": "WBS Element Details",
+      "elements": {
+        "WBSElementInternalID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 8,
+          "@sap.display.format": "NonNegative",
+          "@sap.label": "WBS Internal ID",
+          "@sap.quickinfo": "WBS Element",
+          "notNull": true
+        },
+        "WBSElementExternalID": {
+          "type": "cds.String",
+          "length": 24,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "WBS Element",
+          "@sap.quickinfo": "Work Breakdown Structure Element (WBS Element) Edited"
+        },
+        "WBSElementShortID": {
+          "type": "cds.String",
+          "length": 16,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Short ID (WBS elem)",
+          "@sap.quickinfo": "WBS element short identification"
+        },
+        "WBSDescription": {
+          "type": "cds.String",
+          "length": 40,
+          "@sap.label": "WBS Element Name"
+        },
+        "WBSElementLangBsdDescription": {
+          "type": "cds.String",
+          "length": 40,
+          "@sap.label": "ShortTxt",
+          "@sap.quickinfo": "Language-Dependent Short Text"
+        },
+        "ResponsiblePerson": {
+          "type": "cds.String",
+          "length": 8,
+          "@sap.display.format": "NonNegative",
+          "@sap.label": "No. of Person Resp.",
+          "@sap.quickinfo": "Number of the Responsible Person (Project Manager)"
+        },
+        "ResponsiblePersonName": {
+          "type": "cds.String",
+          "length": 25,
+          "@sap.label": "Name of Person Resp.",
+          "@sap.quickinfo": "Name of responsible person (Project manager)"
+        },
+        "ApplicantCode": {
+          "type": "cds.String",
+          "length": 8,
+          "@sap.display.format": "NonNegative",
+          "@sap.label": "Applicant no.",
+          "@sap.quickinfo": "Applicant number"
+        },
+        "ApplicantName": {
+          "type": "cds.String",
+          "length": 25,
+          "@sap.label": "Applicant"
+        },
+        "CompanyCode": {
+          "type": "cds.String",
+          "length": 4,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Company Code"
+        },
+        "BusinessArea": {
+          "type": "cds.String",
+          "length": 4,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Business Area"
+        },
+        "ControllingArea": {
+          "type": "cds.String",
+          "length": 4,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Controlling Area"
+        },
+        "FunctionalArea": {
+          "type": "cds.String",
+          "length": 16,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Functional Area"
+        },
+        "ProfitCenter": {
+          "type": "cds.String",
+          "length": 10,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Profit Center"
+        },
+        "ResponsibleCostCenter": {
+          "type": "cds.String",
+          "length": 10,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Responsible Cost Center"
+        },
+        "Plant": {
+          "type": "cds.String",
+          "length": 4,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Plant"
+        },
+        "FreeDefinedTableFieldSemantic": {
+          "type": "cds.String",
+          "length": 7,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Field key",
+          "@sap.quickinfo": "Key word ID for user-defined fields"
+        },
+        "FactoryCalendar": {
+          "type": "cds.String",
+          "length": 2,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Calendar"
+        },
+        "PriorityCode": {
+          "type": "cds.String",
+          "length": 1,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Priority"
+        },
+        "Currency": {
+          "type": "cds.String",
+          "length": 5,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Currency",
+          "@sap.quickinfo": "WBS element currency",
+          "@sap.semantics": "currency-code"
+        },
+        "CostingSheet": {
+          "type": "cds.String",
+          "length": 6,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Costing Sheet"
+        },
+        "CostCenter": {
+          "type": "cds.String",
+          "length": 10,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "CCtr posted actual",
+          "@sap.quickinfo": "Cost center to which costs are actually posted"
+        },
+        "RequestingCostCenter": {
+          "type": "cds.String",
+          "length": 10,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Requesting Cost Center",
+          "@sap.quickinfo": "Requesting cost center"
+        },
+        "ProjectInternalID": {
+          "type": "cds.String",
+          "length": 8,
+          "@sap.display.format": "NonNegative",
+          "@sap.label": "Project def.",
+          "@sap.quickinfo": "Project (internal)"
+        },
+        "WBSElementIsBillingElement": {
+          "type": "cds.Boolean",
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Billing Element",
+          "@sap.quickinfo": "Indicator: Billing element"
+        },
+        "InvestmentProfile": {
+          "type": "cds.String",
+          "length": 6,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Investment Profile",
+          "@sap.quickinfo": "Investment Measure Profile"
+        },
+        "WBSIsStatisticalWBSElement": {
+          "type": "cds.Boolean",
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Statistical",
+          "@sap.quickinfo": "Statistical WBS element"
+        },
+        "WBSIsAccountAssignmentElement": {
+          "type": "cds.Boolean",
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Account Assignment Element",
+          "@sap.quickinfo": "Indicator: Account assignment element"
+        },
+        "ProjectType": {
+          "type": "cds.String",
+          "length": 2,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Project Type"
+        },
+        "WBSElementIsPlanningElement": {
+          "type": "cds.Boolean",
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Planning Element",
+          "@sap.quickinfo": "Indicator: Planning element"
+        },
+        "WorkCenterLocation": {
+          "type": "cds.String",
+          "length": 10,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Location"
+        },
+        "ResultAnalysisInternalID": {
+          "type": "cds.String",
+          "length": 6,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Results analysis key",
+          "@sap.quickinfo": "Results Analysis Key"
+        },
+        "TaxJurisdiction": {
+          "type": "cds.String",
+          "length": 15,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Tax Jurisdiction"
+        },
+        "FunctionalLocation": {
+          "type": "cds.String",
+          "length": 30,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Functional location"
+        },
+        "CreatedByUser": {
+          "type": "cds.String",
+          "length": 12,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Created By",
+          "@sap.quickinfo": "Name of Person Responsible for Creating the Object"
+        },
+        "CreationDate": {
+          "type": "cds.Date",
+          "@sap.display.format": "Date",
+          "@sap.label": "Created On",
+          "@sap.quickinfo": "Record Created On"
+        },
+        "LastChangedByUser": {
+          "type": "cds.String",
+          "length": 12,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Changed By",
+          "@sap.quickinfo": "Name of Person Who Changed Object"
+        },
+        "LastChangeDate": {
+          "type": "cds.Date",
+          "@sap.display.format": "Date",
+          "@sap.label": "Changed on",
+          "@sap.quickinfo": "Date on which object was last changed"
+        },
+        "RespCostCenterControllingArea": {
+          "type": "cds.String",
+          "length": 4,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "CA resp. cost center",
+          "@sap.quickinfo": "Responsible Cost Center Controlling Area"
+        },
+        "WBSIsMarkedForIntegratedPlng": {
+          "type": "cds.Boolean",
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Integrated Planning",
+          "@sap.quickinfo": "Indicator 'Integrated Planning' for Cost Object Category"
+        },
+        "Equipment": {
+          "type": "cds.String",
+          "length": 18,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Equipment",
+          "@sap.quickinfo": "Equipment Number"
+        },
+        "ProjectObjectChangeNumber": {
+          "type": "cds.String",
+          "length": 12,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Change Number"
+        },
+        "WBSElementHierarchyLevel": {
+          "type": "cds.Integer",
+          "@odata.Type": "Edm.Byte",
+          "@sap.label": "Level",
+          "@sap.quickinfo": "Level in Project Hierarchy"
+        },
+        "OverheadCode": {
+          "type": "cds.String",
+          "length": 6,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Overhead Key"
+        },
+        "ReferenceElement": {
+          "type": "cds.String",
+          "length": 40,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Reference Element",
+          "@sap.quickinfo": "Reference Element PM/PS"
+        },
+        "ProjInterestCalcProfile": {
+          "type": "cds.String",
+          "length": 7,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Interest Profile",
+          "@sap.quickinfo": "Interest Profile for Project/Order Interest Calculation"
+        },
+        "ProgressAnlysAggregationWeight": {
+          "type": "cds.Decimal",
+          "precision": 8,
+          "scale": 0,
+          "@sap.label": "POC Weight",
+          "@sap.quickinfo": "Aggregation weight for POC (PS progress)"
+        },
+        "ReqgCostCenterControllingArea": {
+          "type": "cds.String",
+          "length": 4,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "CA req. cost center",
+          "@sap.quickinfo": "Controlling area of requesting cost center"
+        },
+        "Language": {
+          "type": "cds.String",
+          "length": 2,
+          "@sap.label": "Language Key"
+        },
+        "IsMarkedForDeletion": {
+          "type": "cds.Boolean",
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Flagged for Deletion",
+          "@sap.quickinfo": "Deletion Indicator"
+        },
+        "WBSElementIsGroupingWBSElement": {
+          "type": "cds.String",
+          "length": 1,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Grouping WBS element",
+          "@sap.quickinfo": "Indicator: Grouping WBS element"
+        },
+        "WBSElementIsUsedInProjSmmry": {
+          "type": "cds.Boolean",
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Proj. summarization",
+          "@sap.quickinfo": "Indicator: WBS element used in project summarization"
+        },
+        "CostingVariant": {
+          "type": "cds.String",
+          "length": 4,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Costing Variant"
+        },
+        "BasicStartDate": {
+          "type": "cds.Date",
+          "@sap.display.format": "Date",
+          "@sap.label": "Start Date",
+          "@sap.quickinfo": "WBS element: Basic start date"
+        },
+        "ForecastedStartDate": {
+          "type": "cds.Date",
+          "@sap.display.format": "Date",
+          "@sap.label": "Forecast Start Date",
+          "@sap.quickinfo": "Forecast Start Date of WBS Element"
+        },
+        "ActualStartDate": {
+          "type": "cds.Date",
+          "@sap.display.format": "Date",
+          "@sap.label": "Actual Start Date",
+          "@sap.quickinfo": "Actual start date for the WBS element"
+        },
+        "BasicEndDate": {
+          "type": "cds.Date",
+          "@sap.display.format": "Date",
+          "@sap.label": "Finish Date",
+          "@sap.quickinfo": "WBS element: Basic finish date"
+        },
+        "ForecastedEndDate": {
+          "type": "cds.Date",
+          "@sap.display.format": "Date",
+          "@sap.label": "Forecast Finish Date",
+          "@sap.quickinfo": "Forecast Finish Date of WBS Element"
+        },
+        "ActualEndDate": {
+          "type": "cds.Date",
+          "@sap.display.format": "Date",
+          "@sap.label": "Actual Finish Date",
+          "@sap.quickinfo": "Actual finish date of the WBS element"
+        },
+        "BasicDuration": {
+          "type": "cds.Decimal",
+          "precision": 5,
+          "scale": 1,
+          "@sap.unit": "BasicDurationUnit",
+          "@sap.label": "Duration",
+          "@sap.quickinfo": "Length (duration) of the basic dates in the WBS element"
+        },
+        "BasicDurationUnit": {
+          "type": "cds.String",
+          "length": 3,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Duration Unit",
+          "@sap.quickinfo": "Unit for duration of basic WBS element dates",
+          "@sap.semantics": "unit-of-measure"
+        },
+        "ForecastedDuration": {
+          "type": "cds.Decimal",
+          "precision": 5,
+          "scale": 1,
+          "@sap.unit": "ForecastedDurationUnit",
+          "@sap.label": "Forecast Duration",
+          "@sap.quickinfo": "Forecasted length (duration) of the WBS element"
+        },
+        "ForecastedDurationUnit": {
+          "type": "cds.String",
+          "length": 3,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Forecast Duration Unit",
+          "@sap.quickinfo": "Unit for duration of WBS element planned dates",
+          "@sap.semantics": "unit-of-measure"
+        },
+        "ActualDuration": {
+          "type": "cds.Decimal",
+          "precision": 5,
+          "scale": 1,
+          "@sap.unit": "ActualDurationUnit",
+          "@sap.label": "Actual Duration",
+          "@sap.quickinfo": "Actual length (duration) of the WBS element"
+        },
+        "ActualDurationUnit": {
+          "type": "cds.String",
+          "length": 3,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Unit of measure",
+          "@sap.quickinfo": "Unit for duration of actual WBS element dates",
+          "@sap.semantics": "unit-of-measure"
+        },
+        "SchedldBasicEarliestStartDate": {
+          "type": "cds.Date",
+          "@sap.display.format": "Date",
+          "@sap.label": "Earliest Start Date",
+          "@sap.quickinfo": "Earliest scheduled start date (Basic)"
+        },
+        "ScheduledBasicLatestEndDate": {
+          "type": "cds.Date",
+          "@sap.display.format": "Date",
+          "@sap.label": "Latest Finish Date",
+          "@sap.quickinfo": "Latest scheduled finish date (basic)"
+        },
+        "SchedldFcstdEarliestStartDate": {
+          "type": "cds.Date",
+          "@sap.display.format": "Date",
+          "@sap.label": "Earliest Forecast Start Date",
+          "@sap.quickinfo": "Scheduled start date (Forecast)"
+        },
+        "LatestSchedldFcstdEndDate": {
+          "type": "cds.Date",
+          "@sap.display.format": "Date",
+          "@sap.label": "Latest Forecast Finish Date",
+          "@sap.quickinfo": "Latest scheduled finish date (Forecast)"
+        },
+        "TentativeActualStartDate": {
+          "type": "cds.Date",
+          "@sap.display.format": "Date",
+          "@sap.label": "Actual Tentative Start Date",
+          "@sap.quickinfo": "Tentative actual start date for WBS element"
+        },
+        "TentativeActualEndDate": {
+          "type": "cds.Date",
+          "@sap.display.format": "Date",
+          "@sap.label": "Actual Tentative Finish Date",
+          "@sap.quickinfo": "Tentative actual finish date for WBS element"
+        },
+        "JointVenture": {
+          "type": "cds.String",
+          "length": 6,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Joint venture"
+        },
+        "JointVentureCostRecoveryCode": {
+          "type": "cds.String",
+          "length": 2,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Recovery Indicator"
+        },
+        "JointVentureEquityType": {
+          "type": "cds.String",
+          "length": 3,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Equity type"
+        },
+        "JntVntrProjectType": {
+          "type": "cds.String",
+          "length": 4,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "JV Object Type",
+          "@sap.quickinfo": "Joint Venture Object Type"
+        },
+        "JntIntrstBillgClass": {
+          "type": "cds.String",
+          "length": 3,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "JIB/JIBE Class"
+        },
+        "JntIntrstBillgSubClass": {
+          "type": "cds.String",
+          "length": 5,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "JIB/JIBE Subclass A"
+        },
+        "SubProject": {
+          "type": "cds.String",
+          "length": 12,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Subproject",
+          "@sap.quickinfo": "Sub-project in work breakdown structure"
+        },
+        "InvestmentReason": {
+          "type": "cds.String",
+          "length": 2,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Investment Reason",
+          "@sap.quickinfo": "Reason for Investment"
+        },
+        "InvestmentScale": {
+          "type": "cds.String",
+          "length": 2,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Scale",
+          "@sap.quickinfo": "Scale of investment objects"
+        },
+        "EnvironmentalInvestmentReason": {
+          "type": "cds.String",
+          "length": 5,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Envir. Investment",
+          "@sap.quickinfo": "Reason for Environmental Investment"
+        },
+        "RequestingCompanyCode": {
+          "type": "cds.String",
+          "length": 4,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Requesting co. code",
+          "@sap.quickinfo": "Requesting company code"
+        },
+        "NetworkAssignmentType": {
+          "type": "cds.String",
+          "length": 1,
+          "@sap.display.format": "NonNegative",
+          "@sap.label": "Network asst",
+          "@sap.quickinfo": "Network assignment"
+        },
+        "CostObject": {
+          "type": "cds.String",
+          "length": 12,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Cost Object"
+        },
+        "BillingPlan": {
+          "type": "cds.String",
+          "length": 10,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Bill. Plan No.",
+          "@sap.quickinfo": "Billing Plan Number / Invoicing Plan Number"
+        },
+        "ControllingObjectClass": {
+          "type": "cds.String",
+          "length": 2,
+          "@sap.label": "Object Class"
+        },
+        "WBSElementParentInternalID": {
+          "type": "cds.String",
+          "length": 8,
+          "@sap.display.format": "NonNegative",
+          "@sap.label": "Superior",
+          "@sap.quickinfo": "Number of the superior WBS element"
+        },
+        "WBSElementChildInternalID": {
+          "type": "cds.String",
+          "length": 8,
+          "@sap.display.format": "NonNegative",
+          "@sap.label": "1st subordinate",
+          "@sap.quickinfo": "Number of the 1. subordinate WBS element"
+        },
+        "LeftSiblingWBSElmntInternalID": {
+          "type": "cds.String",
+          "length": 8,
+          "@sap.display.format": "NonNegative",
+          "@sap.label": "Left adjacent",
+          "@sap.quickinfo": "Number of the left adjacent position in WBS"
+        },
+        "RightSiblingWBSElmntInternalID": {
+          "type": "cds.String",
+          "length": 8,
+          "@sap.display.format": "NonNegative",
+          "@sap.label": "Right adjacent",
+          "@sap.quickinfo": "Number of the right adjacent position in WBS"
+        },
+        "FreeDefinedAttribute01": {
+          "type": "cds.String",
+          "length": 20,
+          "@sap.label": "Ufield 1 WBS element",
+          "@sap.quickinfo": "1st user field for 20 characters - WBS element-"
+        },
+        "FreeDefinedAttribute02": {
+          "type": "cds.String",
+          "length": 20,
+          "@sap.label": "Ufield 2 WBS element",
+          "@sap.quickinfo": "2nd user field 20 digits - WBS element"
+        },
+        "FreeDefinedAttribute03": {
+          "type": "cds.String",
+          "length": 10,
+          "@sap.label": "Ufield 3 WBS element",
+          "@sap.quickinfo": "3rd user-defined field 10 digits -WBS element"
+        },
+        "FreeDefinedAttribute04": {
+          "type": "cds.String",
+          "length": 10,
+          "@sap.label": "Ufield 4 WBS element",
+          "@sap.quickinfo": "4th user-defined field 10 digits -WBS element"
+        },
+        "FreeDefinedQuantity1": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3,
+          "@sap.unit": "FreeDefinedQuantity1Unit",
+          "@sap.label": "Ufield Quanty 1 WBS",
+          "@sap.quickinfo": "1st user-defined field for quantity(length 10,3) WBS element"
+        },
+        "FreeDefinedQuantity1Unit": {
+          "type": "cds.String",
+          "length": 3,
+          "@sap.label": "UF unit 1 WBS",
+          "@sap.quickinfo": "1st user defined field for quantity field unit - WBS element",
+          "@sap.semantics": "unit-of-measure"
+        },
+        "FreeDefinedQuantity2": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3,
+          "@sap.unit": "FreeDefinedQuantity2Unit",
+          "@sap.label": "UF Qty 2 WBS",
+          "@sap.quickinfo": "2nd use field for quantity (length 10,3) WBS element"
+        },
+        "FreeDefinedQuantity2Unit": {
+          "type": "cds.String",
+          "length": 3,
+          "@sap.label": "UF unit 2 WBS",
+          "@sap.quickinfo": "2nd user defined field for quantity field unit - WBS element",
+          "@sap.semantics": "unit-of-measure"
+        },
+        "FreeDefinedAmount1": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3,
+          "@sap.unit": "FreeDefinedAmount1Currency",
+          "@sap.variable.scale": "true",
+          "@sap.label": "Ufield value 1 WBS",
+          "@sap.quickinfo": "1st user field for values (length 10,2) WBS element"
+        },
+        "FreeDefinedAmount1Currency": {
+          "type": "cds.String",
+          "length": 5,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Ufield unit 1 WBS",
+          "@sap.quickinfo": "1st user defined field for value field unit - WBS element",
+          "@sap.semantics": "currency-code"
+        },
+        "FreeDefinedAmount2": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3,
+          "@sap.unit": "FreeDefinedAmount1Currency",
+          "@sap.variable.scale": "true",
+          "@sap.label": "Ufield value 2 WBS",
+          "@sap.quickinfo": "2nd user field for values (length 10,2) WBS element"
+        },
+        "FreeDefinedAmount2Currency": {
+          "type": "cds.String",
+          "length": 5,
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Ufield unit 2 WBS",
+          "@sap.quickinfo": "2nd user defined field for value field unit - WBS element",
+          "@sap.semantics": "currency-code"
+        },
+        "FreeDefinedDate1": {
+          "type": "cds.Date",
+          "@sap.display.format": "Date",
+          "@sap.label": "Ufield date 1 WBS",
+          "@sap.quickinfo": "1st user field for date -WBS element"
+        },
+        "FreeDefinedDate2": {
+          "type": "cds.Date",
+          "@sap.display.format": "Date",
+          "@sap.label": "Ufield date 2 WBS",
+          "@sap.quickinfo": "2nd user field for date -WBS element"
+        },
+        "FreeDefinedIndicator1": {
+          "type": "cds.Boolean",
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Ufield Ind. 1 WBS",
+          "@sap.quickinfo": "1st user field for 'Ind. for evaluations' WBS elem."
+        },
+        "FreeDefinedIndicator2": {
+          "type": "cds.Boolean",
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Ufield Ind. 2 WBS",
+          "@sap.quickinfo": "2nd user field for 'Indicator for eval.s' WBS elemnt"
+        },
+        "to_Project": {
+          "@cds.ambiguous": "missing on condition?",
+          "type": "cds.Association",
+          "target": "OP_API_PROJECT_V2_0001.Project",
+          "on": [
+            {
+              "ref": [
+                "to_Project",
+                "ProjectInternalID"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "ProjectInternalID"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

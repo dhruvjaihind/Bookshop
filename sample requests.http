@@ -1,0 +1,32 @@
+### Submit Orders
+POST http://localhost:4004/browse/Orders
+Content-Type: application/json
+
+{ "OrderNo":"2019-09...", "Items":[
+    { "book_ID":201, "amount":5 }
+]}
+
+# Sending this three times should result in a 409: 5 exceeds stock for book #201
+
+### Check books entity that stock was reduced
+GET http://localhost:4004/sap/opu/odata/sap/AdminEndpoint/Books
+
+
+### Create Book
+POST http://localhost:4004/sap/opu/odata/sap/AdminEndpoint/Books
+Content-Type: application/json
+
+{
+"name":"Harry Potter 7",
+"language":"English",
+"ID":390,
+"title":"Harry Potter Series Last Part",
+"descr":"xxx",
+"author_ID":200,
+"stock":1,
+"price":100,
+"currency_code":"AED"
+}
+
+### GET Books
+GET  http://localhost:4004/sap/opu/odata/sap/AdminEndpoint/Books
