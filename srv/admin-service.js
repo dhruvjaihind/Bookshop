@@ -4,7 +4,7 @@ const cds = require('@sap/cds')
 module.exports = cds.service.impl(srv => {
   const { OrderItems } = srv.entities ('sap.capire.bookshop')
 
-  //srv.after (['READ','EDIT'], 'Orders', _calculateTotals)
+  srv.after (['READ','EDIT'], 'Orders', _calculateTotals)
  
   // on-the-fly calculate the total Order price based on the OrderItems' netAmounts
   async function _calculateTotals (orders, req) {
